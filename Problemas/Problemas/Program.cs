@@ -1,4 +1,6 @@
-﻿Main();
+﻿using System.Text.RegularExpressions;
+
+Main();
 
 static void Main()
 {
@@ -126,10 +128,12 @@ static void Resolver_03_DistanciaDeHamming()
 // 04 - Contar palavras em uma string
 static void Resolver_04_ContasPalavras()
 {
-    string text = "  um texto tem quantas palavras      ";
+    string text = "  um texto    tem quantas palavras      ";
     int n = 0;
 
-    text = text.Trim();  // Trim não altera o valor da variável text - É um método imutável
+    text = Regex.Replace(text, @"\s+", " "); // Aqui utilizamos a expressão regular
+                                             // para substituir dois ou mais espaços por apenas um espaço
+    text = text.Trim();  // Trim não altera o valor da variável text origem - É um método imutável
     var words = text.Split(" "); // Split também é um método ímutável
     n = words.Length;
 
