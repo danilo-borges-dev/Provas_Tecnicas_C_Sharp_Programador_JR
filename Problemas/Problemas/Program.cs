@@ -4,14 +4,15 @@ static void Main()
 {
     //Resolver_01_InverterUmaString();
     //Resolver_02_ContarCaracteres();
-    try
-    {
-        Resolver_03_DistanciaDeHamming();
-    }
-    catch (Exception ex)
-    {
-        Console.WriteLine(ex.Message);
-    }
+    //try
+    //{
+    //    Resolver_03_DistanciaDeHamming();
+    //}
+    //catch (Exception ex)
+    //{
+    //    Console.WriteLine(ex.Message);
+    //}
+    Resolver_04_ContasPalavras();
 }
 
 // 01 - Inverta a string gorila
@@ -120,4 +121,17 @@ static void Resolver_03_DistanciaDeHamming()
         }
     }
     Console.WriteLine("Diferença= " + distance);
+}
+
+// 04 - Contar palavras em uma string
+static void Resolver_04_ContasPalavras()
+{
+    string text = "  um texto tem quantas palavras      ";
+    int n = 0;
+
+    text = text.Trim();  // Trim não altera o valor da variável text - É um método imutável
+    var words = text.Split(" "); // Split também é um método ímutável
+    n = words.Length;
+
+    Console.WriteLine($"Números de palavras: {n}");
 }
